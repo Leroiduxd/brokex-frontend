@@ -108,7 +108,7 @@ export const TradingPanel = ({ symbol, price, assetId }: TradingPanelProps) => {
 
   const fetchProof = async (idx: number): Promise<string> => {
     try {
-      const response = await fetch(`https://proof.brokex.trade/proof?pairs=${idx}`);
+      const response = await fetch(`https://backend.brokex.trade/proof?pairs=${idx}`);
       const data = await response.json();
       return data.proof;
     } catch (error) {
