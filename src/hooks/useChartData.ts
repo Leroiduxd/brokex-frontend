@@ -27,7 +27,7 @@ export const useChartData = ({ pairId, interval = 3600 }: UseChartDataProps) => 
       setError(null);
       
       try {
-        const response = await fetch(`https://chart.brokex.trade/history?pair=${pairId}&interval=${interval}`);
+        const response = await fetch(`https://backend.brokex.trade/history?pair=${pairId}&interval=${interval}`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
