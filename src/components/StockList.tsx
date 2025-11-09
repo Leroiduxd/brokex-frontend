@@ -17,7 +17,7 @@ interface StockListProps {
 }
 
 export const StockList = ({ selectedStock, onSelectStock, onStockDataChange, stocks: externalStocks, onToggleStockList }: StockListProps) => {
-  const { data: wsData, isConnected, error } = useWebSocket("wss://wss.brokex.trade:8443");
+  const { data: wsData, isConnected, error } = useWebSocket("wss://backend.brokex.trade/ws/prices");
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [stocks, setStocks] = useState<any[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<Set<MarketCategory>>(new Set());
